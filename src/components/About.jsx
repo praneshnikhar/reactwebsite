@@ -13,10 +13,11 @@ const StatCard = ({ number, label }) => {
       ref={ref}
       initial={{ scale: 0.5, opacity: 0 }}
       animate={inView ? { scale: 1, opacity: 1 } : {}}
+      whileHover={{ scale: 1.05 }}
       transition={{ duration: 0.5 }}
-      className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-shadow"
+      className="bg-white dark:bg-black p-6 rounded-xl shadow-lg border border-gray-100 dark:border-black hover:shadow-xl transition-shadow"
     >
-      <h3 className="text-4xl font-bold text-ieee-blue dark:text-blue-400 mb-2 font-display">
+      <h3 className="text-4xl font-bold text-ieee-blue dark:text-[#B2A5FF] mb-2 font-display">
         {number}
       </h3>
       <p className="text-gray-600 dark:text-gray-400">{label}</p>
@@ -41,7 +42,7 @@ export default function About() {
   };
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="about" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -50,69 +51,60 @@ export default function About() {
           transition={{ staggerChildren: 0.2 }}
           className="space-y-16"
         >
-          {/* IEEE Main Info */}
           <div className="text-center space-y-8">
             <motion.h1
               variants={fadeInUp}
               className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white font-display"
             >
-              Institute of Electrical and Electronics Engineers
+              Pranesh Nikhar
             </motion.h1>
             <motion.p
               variants={fadeInUp}
-              className="text-xl text-ieee-blue dark:text-blue-400 font-semibold"
+              className="text-xl text-ieee-blue dark:text-[#B2A5FF] font-semibold"
             >
-              Advancing technology for the benefit of humanity.
+              Innovating Technology for a Better Tomorrow
             </motion.p>
             <motion.p
               variants={fadeInUp}
               className="max-w-3xl mx-auto text-gray-600 dark:text-gray-400"
             >
-              IEEE is the world&apos;s largest technical professional organization
-              dedicated to advancing technology for the benefit of humanity.
+              I am a passionate tech enthusiast, programmer, and lifelong learner, dedicated to solving complex problems and creating impactful solutions for the advancement of humanity.
             </motion.p>
           </div>
 
-          {/* Stats Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <StatCard number="500+" label="Members" />
-            <StatCard number="50+" label="Events" />
-            <StatCard number="4" label="Societies" />
-            <StatCard number="10+" label="Mentors" />
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <StatCard number="50+" label="Projects" />
+            <StatCard number="10+" label="Skills" />
+            <StatCard number="500+" label="Connections" />
+            {/* <StatCard number="10+" label="Mentors" /> */}
           </div>
 
-          {/* About IEEE SB MUJ */}
           <div className="space-y-12">
             <motion.div variants={fadeInUp} className="space-y-6">
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white font-display">
-                About IEEE SB MUJ
+                About Me
               </h2>
               <p className="text-gray-600 dark:text-gray-400">
-                IEEE Student Branch, Manipal University Jaipur is a group of
-                driven individuals striving to create and spread awareness about
-                various technologies that surround us. In our pursuit of quality
-                and practical knowledge, we are guided by a group of dedicated
-                faculty members who are relentless in their efforts to hone our
-                potential and mould us into the best engineers we could possibly
-                become.
+                Hi there! I’m a 19-year-old programmer with a passion for leveraging technology to solve complex problems and create impactful solutions. With a solid technical foundation and a drive to innovate, I'm always excited to tackle new challenges in Artificial Intelligence and Machine Learning
+
+                💡 Skilled in Data Structures & Algorithms, Web Development, and Cloud Computing, I’m constantly expanding my knowledge and honing my skills to stay at the forefront of tech advancements. My journey is all about exploring the endless possibilities of AI and finding ways to make a real difference.
+
+                🌐 Open to connecting with mentors, fellow tech enthusiasts, and visionary teams. Let’s collaborate and build the future, one project at a time!
               </p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 gap-8">
               <motion.div variants={fadeInUp} className="space-y-4">
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white font-display">
-                  Our Vision
+                  My Vision
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400">
-                  IEEE SB MUJ envisions itself as the world&apos;s premier provider
-                  of technical knowledge, community services, educational
-                  seminars, and individualised services to the world&apos;s top
-                  professionals.
+                  To use Artificial Intelligence and Machine Learning to build innovative and impactful solutions that solve real-world problems and make life better. I’m committed to learning, collaborating, and using technology to create a smarter and more connected future.
                 </p>
               </motion.div>
 
               <motion.div variants={fadeInUp} className="space-y-4">
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white font-display">
+                {/* <h3 className="text-2xl font-bold text-gray-900 dark:text-white font-display">
                   Our Mission
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400">
@@ -120,7 +112,7 @@ export default function About() {
                   of Manipal University, Jaipur. Our mission here is to work on
                   projects and development into advancing technology in order to
                   transform lives through the power of technology and education.
-                </p>
+                </p> */}
               </motion.div>
             </div>
           </div>
@@ -129,3 +121,5 @@ export default function About() {
     </section>
   );
 }
+
+

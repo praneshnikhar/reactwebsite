@@ -1,18 +1,23 @@
+
+
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Events from "./components/Events";
-import Testimonials from "./components/Testimonials";
+// import Testimonials from "./components/Testimonials";
 import BlogPosts from "./components/BlogPosts";
 import Footer from "./components/Footer";
+import Skills from "./components/skills"; // Import Skills component
+import Contact from "./components/Contact"; // Import Contact component
 
 const Home = () => (
   <>
     <Hero />
     <About />
     <Events />
-    <Testimonials />
+    {/* <Testimonials /> */}
     <BlogPosts />
   </>
 );
@@ -42,7 +47,11 @@ function App() {
           />
           <Route
             path="/contact"
-            element={<div className="pt-20">Contact Page</div>}
+            element={<Contact />} // Use the Contact component
+          />
+          <Route
+            path="/skills"
+            element={<Skills />} // Add route for Skills
           />
         </Routes>
         <Footer />

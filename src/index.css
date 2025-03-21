@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --circuit-color: #006699;
+  --circuit-color: #ac39e6;
 }
 
 .dark {
-  --circuit-color: #ffffff;
+  --circuit-color: #f8f8f8;
 }
 
 @keyframes float {
@@ -51,3 +51,5 @@
 .pulse {
   animation: pulse 2s ease-in-out infinite;
 }
+
+ 

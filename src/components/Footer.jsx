@@ -1,46 +1,38 @@
+
+
 import { Link } from "react-router-dom";
-import {
-  GitlabIcon as GitHub,
-  Instagram,
-  Linkedin,
-  Twitter,
-} from "lucide-react";
+import { Instagram, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Footer() {
   const socialLinks = [
-    { icon: GitHub, href: "#", label: "GitHub" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Twitter, href: "#", label: "Twitter" },
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/praneshnikhar/",
+      label: "Instagram",
+    },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/pranesh-nikhar/",
+      label: "LinkedIn",
+    },
   ];
 
   const footerSections = [
-    {
-      title: "Quick Links",
-      links: [
-        { name: "Home", href: "/" },
-        { name: "Events", href: "/events" },
-        { name: "Blog", href: "/blog" },
-        { name: "Team", href: "/team" },
-      ],
-    },
-    {
-      title: "Resources",
-      links: [
-        { name: "IEEE.org", href: "https://www.ieee.org" },
-        { name: "IEEE Xplore", href: "https://ieeexplore.ieee.org" },
-        { name: "IEEE Standards", href: "#" },
-        { name: "IEEE Spectrum", href: "#" },
-      ],
-    },
+    // {
+    //   title: "Quick Links",
+    //   links: [
+    //     { name: "Home", href: "/" },
+    //     { name: "Projects", href: "https://github.com/praneshnikhar?tab=repositories" },
+    //     { name: "Blog", href: "/blog" },
+    //     { name: "About", href: "/about" },
+    //   ],
+    // },
     {
       title: "Contact",
       links: [
-        { name: "Contact Us", href: "/contact" },
-        { name: "Join IEEE", href: "#" },
-        { name: "Newsletter", href: "#" },
-        { name: "FAQs", href: "#" },
+        { name: "Contact Me", href: "/contact" },
+        { name: "Blogs", href: "https://medium.com/@praneshnikhar" },
       ],
     },
   ];
@@ -55,18 +47,16 @@ export default function Footer() {
                 whileHover={{ scale: 1.05 }}
                 className="text-2xl font-bold text-ieee-blue dark:text-white"
               >
-                IEEE SB MUJ
+                Pranesh Nikhar
               </motion.span>
             </Link>
-            <p className="mt-4 text-gray-600 dark:text-gray-400 max-w-md">
-              Empowering innovation and fostering technological advancement
-              through professional excellence and collaborative learning.
-            </p>
             <div className="mt-6 flex space-x-4">
               {socialLinks.map((social) => (
                 <motion.a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   className="text-gray-400 hover:text-ieee-blue dark:hover:text-white transition-colors duration-200"
@@ -86,24 +76,28 @@ export default function Footer() {
               <ul className="mt-4 space-y-2">
                 {section.links.map((link) => (
                   <li key={link.name}>
-                    <Link
-                      to={link.href}
-                      className="text-gray-600 dark:text-gray-400 hover:text-ieee-blue dark:hover:text-white transition-colors duration-200"
-                    >
-                      {link.name}
-                    </Link>
+                    {link.href.startsWith("http") ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-600 dark:text-gray-400 hover:text-ieee-blue dark:hover:text-white transition-colors duration-200"
+                      >
+                        {link.name}
+                      </a>
+                    ) : (
+                      <Link
+                        to={link.href}
+                        className="text-gray-600 dark:text-gray-400 hover:text-ieee-blue dark:hover:text-white transition-colors duration-200"
+                      >
+                        {link.name}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
             </div>
           ))}
-        </div>
-
-        <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
-          <p className="text-center text-gray-400 dark:text-gray-600">
-            © {new Date().getFullYear()} IEEE Student Branch MUJ. All rights
-            reserved.
-          </p>
         </div>
       </div>
     </footer>

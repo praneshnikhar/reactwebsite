@@ -6,31 +6,32 @@ import PropTypes from "prop-types";
 const events = [
   {
     id: 1,
-    title: "Hack To The Future",
-    image: "/placeholder.svg?height=200&width=300",
-    tag: "IEEE SB MUJ",
-    date: "2023-11-15",
+    title: "Optical Flow Tracking",
+    image: "/public/optical.jpg",
+    
+    tag: "Pranesh Nikhar",
+    date: "2024-09-13",
   },
   {
     id: 2,
-    title: "Campus Coders",
-    image: "/placeholder.svg?height=200&width=300",
-    tag: "IEEE SB MUJ",
-    date: "2023-11-20",
+    title: "Driver Drowsiness Detector",
+    image: "/public/drowsiness.jpg",
+    tag: "Pranesh Nikhar",
+    date: "2024-09-12",
   },
   {
     id: 3,
-    title: "21 Days Of Code 2.0",
-    image: "/placeholder.svg?height=200&width=300",
-    tag: "IEEE SB MUJ",
-    date: "2023-12-01",
+    title: "AI ChatBot",
+    image: "/public/chatbot.png",
+    tag: "Pranesh Nikhar",
+    date: "2024-08-23",
   },
   {
     id: 4,
-    title: "AI Workshop",
-    image: "/placeholder.svg?height=200&width=300",
-    tag: "IEEE SB MUJ",
-    date: "2023-12-10",
+    title: "Bank Management System",
+    image: "/public/atm.png",
+    tag: "Pranesh Nikhar",
+    date: "2024-07-22",
   },
 ];
 
@@ -91,10 +92,10 @@ export default function Events() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">
-            Latest Events
+            Latest Projects
           </h2>
-          <p className="text-gray-600 dark:text-gray-400">
-            Discover our upcoming and ongoing events
+          <p className="text-gray-600 dark:text-[#B2A5FF]">
+          Explore my ongoing and upcoming projects
           </p>
         </div>
 
@@ -146,14 +147,14 @@ export default function Events() {
               onClick={() => setCurrentPage(i)}
               className={`w-2 h-2 rounded-full transition-colors ${
                 i === currentPage
-                  ? "bg-ieee-blue"
-                  : "bg-gray-300 dark:bg-gray-600"
+                  ? "bg-[#B2A5FF]"
+                  : "bg-gray-300 dark:[#B2A5FF]"
               }`}
             />
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        {/* <div className="text-center mt-12">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -161,7 +162,19 @@ export default function Events() {
           >
             View All Events
           </motion.button>
+        </div> */}
+
+        <div className="text-center mt-12">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-ieee-blue text-white px-6 py-2 rounded-md hover:bg-[#B2A5FF] transition-colors duration-300 shadow-md"
+            onClick={() => window.open('https://github.com/praneshnikhar', '_blank')}
+          >
+            View All Projects
+          </motion.button>
         </div>
+
       </div>
     </section>
   );

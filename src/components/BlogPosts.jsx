@@ -6,33 +6,36 @@ import PropTypes from "prop-types"
 const blogPosts = [
   {
     id: 1,
-    title: "Computer Vision in Today's World",
+    title: "I Can’t Believe This Model Is Open-Sourced!!!! A Small Open-Source Model That’s on Par with OpenAI’s O1",
     excerpt:
-      "Computer Vision technology has been prevalent since the 1950s. But it was not until the boom in the field of AI and ML, this technology proved to have innumerable applications.",
-    image: "/placeholder.svg?height=200&width=300",
-    author: "Yash Pachchigar",
-    date: "Aug 18, 2023",
+      "If you’ve been following the AI space, you know that the race to build the most ...",
+    image: "/public/llm.webp",
+    author: "Pranesh Nikhar",
+    date: "Jan 28, 2025",
     readTime: "5 min read",
+    link: "https://medium.com/@praneshnikhar/i-cant-believe-this-model-is-open-sourced-0102d0c56637",
   },
   {
     id: 2,
-    title: "ARE ELECTRIC CARS HERE TO STAY?",
+    title: "The Power of Machine Learning: Transforming the Future",
     excerpt:
-      "With the global threats of termination of oils, technology gives a majority of its attention at finding alternatives to sustain the standard of living without any sort of compensation.",
-    image: "/placeholder.svg?height=200&width=300",
+      "Machine Learning (ML) is no longer just a buzzword; it is a revolutionary technology that is shaping industries and redefining how we interact with data..",
+    image: "/public/ml.avif",
     author: "Siya Mulge",
-    date: "Aug 13, 2023",
+    date: "Jan 27, 2025",
     readTime: "4 min read",
+    link: "https://medium.com/@praneshnikhar/the-power-of-machine-learning-transforming-the-future-4456f29610e0",
   },
   {
     id: 3,
-    title: "Netflix's Recommendation System using Machine Learning",
+    title: "Understanding Machine Learning Algorithms: The Building Blocks of AI",
     excerpt:
-      'How does Netflix know that you like Money Heist? And no, it\'s not the FBI spying on your "Bella Ciao" wall-poster.',
-    image: "/placeholder.svg?height=200&width=300",
+      "Machine learning algorithms are the backbone of artificial intelligence, powering systems to analyze data, recognize patterns, and make decisions. These algorithms are designed to mimic human learning.",
+    image: "/public/algo.png",
     author: "Aarohi Manchanda",
-    date: "Aug 2, 2023",
-    readTime: "6 min read",
+    date: "Jan 26, 205",
+    readTime: "4 min read",
+    link: "https://medium.com/@praneshnikhar/understanding-machine-learning-algorithms-the-building-blocks-of-ai-39f68c407760",
   },
 ]
 
@@ -64,13 +67,16 @@ const BlogCard = ({ post }) => {
           <div className="text-sm text-gray-500 dark:text-gray-400">
             {post.date} • {post.readTime}
           </div>
-          <motion.button
+          <motion.a
+            href={post.link}
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ x: 5 }}
-            className="text-ieee-blue dark:text-blue-400 hover:underline flex items-center"
+            className="text-ieee-blue dark:text-[#B2A5FF] hover:underline flex items-center"
           >
             Read more
             <ArrowRight className="w-4 h-4 ml-1" />
-          </motion.button>
+          </motion.a>
         </div>
       </div>
     </motion.article>
@@ -86,6 +92,7 @@ BlogCard.propTypes = {
     author: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
     readTime: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
   }).isRequired,
 }
 
@@ -94,8 +101,8 @@ function BlogPosts() {
     <section className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">Blog Posts</h2>
-          <p className="text-gray-600 dark:text-gray-400">Explore the latest insights from our community</p>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-display">Blogs</h2>
+          <p className="text-gray-600 dark:text-[#B2A5FF]">Exploring AI Insights</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -105,14 +112,17 @@ function BlogPosts() {
         </div>
 
         <div className="text-center mt-12">
-          <motion.button
+          <motion.a
+            href="https://medium.com/@praneshnikhar"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-2 bg-ieee-blue text-white px-8 py-3 rounded-md hover:bg-blue-700 transition-colors shadow-md"
+            className="inline-flex items-center gap-2 bg-ieee-blue text-white px-8 py-3 rounded-md hover:bg-[#B2A5FF]  transition-colors shadow-md"
           >
             More Blogs
             <ArrowRight className="w-4 h-4" />
-          </motion.button>
+          </motion.a>
         </div>
       </div>
     </section>
@@ -120,4 +130,3 @@ function BlogPosts() {
 }
 
 export default BlogPosts
-
