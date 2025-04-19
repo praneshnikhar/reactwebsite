@@ -7,7 +7,7 @@ const events = [
   {
     id: 1,
     title: "Optical Flow Tracking",
-    image: "/public/optical.jpg",
+    image: "/src/optical.jpg",
     
     tag: "Pranesh Nikhar",
     date: "2024-09-13",
@@ -15,21 +15,21 @@ const events = [
   {
     id: 2,
     title: "Driver Drowsiness Detector",
-    image: "/public/drowsiness.jpg",
+    image: "/src/drowsiness.jpg",
     tag: "Pranesh Nikhar",
     date: "2024-09-12",
   },
   {
     id: 3,
     title: "AI ChatBot",
-    image: "/public/chatbot.png",
+    image: "/src/chatbot.png",
     tag: "Pranesh Nikhar",
     date: "2024-08-23",
   },
   {
     id: 4,
     title: "Bank Management System",
-    image: "/public/atm.png",
+    image: "/src/atm.png",
     tag: "Pranesh Nikhar",
     date: "2024-07-22",
   },
